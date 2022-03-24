@@ -1,1 +1,72 @@
-/* You can add global styles to this file, and also import other style files */
+html, body{
+  margin: 10px;
+  background-color: var(--surface-b); 
+  font-family:  var(--font-family);
+}
+input{
+  color: black !important;
+  background-color: white !important;
+}
+
+.separador{
+  margin: 10px;
+}
+.text-layout{
+  color: var(--text-color);
+}
+
+h2{
+
+  color: white;
+}
+h4{
+  margin-left: 50px;
+  color: white;
+}
+
+.table {
+	width: 800px !important;
+	border-collapse: collapse !important;
+	overflow: hidden !important;
+	box-shadow: 0 0 20px rgba(0,0,0,0.1) !important;
+
+}
+/*
+.p-dropdown {
+  background-color: white !important;
+  color: rgba(0,0,0,0.1) !important;
+}
+*/
+th,td {
+	padding: 15px;
+  background-color: rgba(255,255,255,0.2);
+	color: #fff;
+}
+
+th {
+	text-align: left;
+}
+td{
+  border-radius: 5px !important;
+}
+
+thead th {
+		background-color: rgba(144, 165, 189, 0.1);
+    border-radius: 5px !important;
+
+}
+
+tr:hover {
+			background-color: rgba(255,255,255,0.3);
+
+}
+
+
+form {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+

@@ -1,0 +1,97 @@
+<div style="margin-bottom: 50px;"></div>
+<div class="flex flex-wrap card-container " style="color: aliceblue; width: 100%;">
+  <div class="flex flex-row flex-wrap card-container">
+  {{titulo}}
+  <form #zooForm="ngForm">
+    <div class="form-group row">
+      <label for="name" class="col-form-label col-sm-2">Nombre</label>
+      <div class="col-sm-6">
+        <input type="text"
+               name="name"
+               [(ngModel)]="this.zoo.name"
+               class="p-inputtext p-component p-element"
+               placeholder="Ingrese el Nombre"
+               required>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="email" class="col-form-label col-sm-2">Email</label>
+      <div class="col-sm-6">
+        <input type="text"
+               name="monthBenefits"
+               [(ngModel)]="zoo.email"
+               class="p-inputtext p-component p-element"
+               placeholder="Ingrese el email"
+               required>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="price" class="col-form-label col-sm-2">Presupuesto</label>
+      <div class="col-sm-6">
+        <input type="number"
+               name="budget"
+               [ngModel]="zoo.budget"
+               (ngModelChange)="zoo.budget=$event"
+               class="p-inputtext p-component p-element"
+               placeholder="Ingrese el presupuesto"
+               required>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="monthIncoming" class="col-form-label col-sm-2">Ingreso mensual</label>
+      <div class="col-sm-6">
+        <input type="number"
+               name="monthIncoming"
+               [ngModel]="zoo.monthIncoming"
+               (ngModelChange)="zoo.monthIncoming=$event"
+               class="p-inputtext p-component p-element"
+               required>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="zoo" class="col-form-label col-sm-2">Telefono</label>
+      <div class="col-sm-6">
+        <input type="number"
+               name="phone_number"
+               [(ngModel)]="zoo.phone_number"
+               class="p-inputtext p-component p-element"
+               >
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="zoo" class="col-form-label col-sm-2">Fecha de inaguración</label>
+      <div class="col-sm-6">
+        <input type="date"
+               name="createdAt"
+               [(ngModel)]="zoo.createdAt"
+               class="p-inputtext p-component p-element"
+               >
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="animales" class="p-float-label text-white">Animales</label>
+      <div class="col-sm-6">
+        <select class="p-inputtext p-component p-element" name="zoologico">
+          <option *ngFor="let anim of animales">{{anim.name}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-sm-6">
+        <p-button *ngIf="!zoo" class="p-element" type="submit" (click)="create()">
+          <button pripple="" class="p-ripple p-element p-button p-component" type="button">
+            <span class="p-button-label ng-star-inserted">Crear</span>
+          </button>
+        </p-button>
+
+        <p-button *ngIf="zoo" class="p-element" type="submit" (click)="update()">
+          <button pripple="" class="p-ripple p-element p-button p-component" type="button">
+            <span class="p-button-label ng-star-inserted" >Actualizar</span>
+          </button>
+        </p-button>
+      </div>
+    </div>
+  </form>
+  </div>
+</div>
+

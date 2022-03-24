@@ -1,0 +1,30 @@
+<form (ngSubmit)="login()">
+  <div class="p-fluid">
+    <div class="field">
+      <label for="username">Username</label>
+      <input type="text"
+      pInputText
+      placeholder="Username"
+      name="username"
+      [(ngModel)]="user.username"
+      class="p-inputtext p-component p-element">
+    </div>
+    <div class="field">
+      <label for="password">Password</label>
+      <input
+      type="password"
+      name="password"
+      [(ngModel)]="user.password"
+      class="p-inputtext p-component p-element">
+    </div>
+    <p-button class="p-element" type="submit">
+      <button pripple="" class="p-ripple p-element p-button p-component" type="button">
+        <span class="p-button-label ng-star-inserted">Login</span>
+      </button>
+    </p-button>
+  </div>
+</form>
+
+
+
+

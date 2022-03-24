@@ -1,0 +1,25 @@
+<!-- <p-splitter [panelSizes]="[0, 0]"
+[minSizes]="[0, 0]"
+[gutterSize]="20"
+layout="horizontal">
+  <ng-template pTemplate style="height: 100px;">
+    <div class="p-col p-ai-center p-jc-center">
+      <app-zoos></app-zoos>
+    </div>
+  </ng-template>
+  <ng-template pTemplate >
+    <div class="p-col p-ai-center p-jc-center">
+      <app-animals></app-animals>
+    </div>
+  </ng-template>
+</p-splitter> -->
+
+<div style=" display: flex;">
+  <div style="width: 133%; height: 100%;">
+    <app-zoos></app-zoos>
+  </div>
+  <div style="flex-grow: 1; width: 100%;">
+    <app-animals></app-animals>
+  </div>
+</div>
+

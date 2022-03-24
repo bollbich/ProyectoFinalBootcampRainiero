@@ -1,0 +1,69 @@
+<div class="flex flex-wrap card-container ">
+  <div class="flex flex-row flex-wrap card-container">
+    <p-scrollPanel [style]="{width: '25p0x', height: '400px'}">
+    <div class="flex align-items-center justify-content-center text-white border-round m-2">
+          <table responsiveLayout="scroll">
+            <caption><h2>Listado de zoologicos</h2></caption>
+        <thead>
+          <tr>
+            <th>Codigo</th>
+            <th>Imagen</th>
+            <th>Nombre</th>
+            <th>Fecha inaguración</th>
+            <th>Presupuesto</th>
+            <th>Ingresos mensuales</th>
+            <th>Email</th>
+            <th>Numero de telefono</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of this.zoos; let i = index">
+            <td>{{ item.id }}</td>
+            <th>
+              <img *ngIf="item.image" src="http://localhost:8087/api/uploads/zoo/image/{{item.image}}" alt="sin imagen" class="img-thumbnail rounded"
+                style="width: 64px;">
+
+              <img *ngIf="!item.image" src="{{imagenSrc}}" alt="sin imagen" class="img-thumbnail rounded"
+                style="width: 64px;">
+
+            </th>
+            <td>{{ item.name }}</td>
+            <td>{{ item.createdAt | date: 'dd/MM/yyyy'}}</td>
+            <td>{{ item.budget | currency:'EUR':'symbol':'3.2-2'}}</td>
+            <td>{{ item.monthIncoming | currency:'EUR':'symbol':'3.2-2'}}</td>
+            <td>{{ item.email }}</td>
+            <td>{{ item.phone_number }}</td>
+            <td *ngIf="this.authService.token">
+              <button
+                pButton
+                pRipple
+                icon="pi pi-times"
+                class="p-button-rounded p-button-danger"
+                (click)="delete(item)"
+              ></button>
+              <span class="separador"></span>
+              <button
+                pButton
+                pRipple
+                icon="pi pi-eye"
+                class="p-button-rounded p-button-primary"
+                (click)="verZoo(item)"
+              ></button>
+              <span class="separador"></span>
+            <button
+            pButton
+            pRipple
+            icon="pi pi-pencil"
+            class="p-button-rounded p-button-success"
+            [routerLink]="['/zoos/editar',item.id]"
+          ></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+</p-scrollPanel>
+<div style="margin-bottom: 25px;"></div>
+<button pButton pRipple icon="pi pi-plus" class="p-button-success" style="width: 160px;"
+            [routerLink]="['/zoos/crear']"></button>
